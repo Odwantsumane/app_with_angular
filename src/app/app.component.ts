@@ -1,19 +1,18 @@
 import { Component } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-root',
-  template: `
-    <main>
-      <header class="brand-name">
-        <img class="brand-logo" src="/assets/logo.svg" alt="logo" aria-hidden="true">
-      </header>
-      <section class="content">
-        <app-home></app-home>
-      </section>
-    </main>
-  `,
-  styleUrls: ['./app.component.css']
-})
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css', '../../node_modules/bootstrap/dist/css/bootstrap.min.css']
+}) 
 export class AppComponent {
   title = 'homes';
+
+  constructor(private modalService: NgbModal) {
+  }
+
+  public open(modal: any): void {
+    this.modalService.open(modal);
+  }
 }

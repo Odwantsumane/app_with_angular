@@ -1,20 +1,24 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HousingLocationComponent } from '../housing-location/housing-location.component'
+import { HousingLocation } from '../housinglocation';
+import { HousingService } from '../housing.service';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule],
-  template: `
-    <section>
-      <form>
-        <input type="text" placeholder="Filter by city">
-        <button class="primary" type="submit">Search</button>
-      </form>
-    </section>
-  `,
-  styleUrls: ['./home.component.css']
+  imports: [CommonModule, HousingLocationComponent],
+  templateUrl: `./home.component.html`,
+  styleUrls: ['./home.component.css', '../../../node_modules/bootstrap/dist/css/bootstrap.min.css']
+
 })
 export class HomeComponent {
+  readonly baseUrl = 'https://angular.io/assets/images/tutorials/faa';
 
+  housingLocationList: HousingLocation[] = [];
+  housingService: HousingService = inject(HousingService);
+
+  constructor() {
+    this.housingLocationList = this.housingService.getAllHousingLocations();
+  }
 }

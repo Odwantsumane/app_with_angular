@@ -16,14 +16,14 @@
     width: 30%;
   }
   
-  button {
+  /* button {
     padding: 10px;
     border: solid 1px rgb(0, 115, 255);
     background: rgb(0, 115, 255);
     color: white;
     border-radius: 8px;
     cursor: pointer;
-  }
+  } */
   
   @media (min-width: 500px) and (max-width: 768px) {
     .results {
