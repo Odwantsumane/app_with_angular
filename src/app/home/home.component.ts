@@ -9,7 +9,7 @@ import { HousingService } from '../housing.service';
   standalone: true,
   imports: [CommonModule, HousingLocationComponent],
   templateUrl: `./home.component.html`,
-  styleUrls: ['./home.component.css', '../../../node_modules/bootstrap/dist/css/bootstrap.min.css']
+  styleUrls: ['./home.component.css']
 
 })
 export class HomeComponent {
